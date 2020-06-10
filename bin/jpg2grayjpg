@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#
+# jpg to gray jpg
+#
+
+# 获取文件名
+FILE_NAME=$(echo -e "$1" | sed 's/.jpg$//g')
+
+# 转换
+djpeg -grayscale "$FILE_NAME.jpg" > "$FILE_NAME.jpg"

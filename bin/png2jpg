@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#
+# png to jpg
+#
+
+# 获取文件名
+FILE_NAME=$(echo -e "$1" | sed 's/.png$//g')
+
+# 转换
+convert "$FILE_NAME.png" "$FILE_NAME.jpg"

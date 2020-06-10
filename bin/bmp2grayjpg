@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#
+# bmp to gray jpg
+#
+
+# 获取文件名
+FILE_NAME=$(echo -e "$1" | sed 's/.bmp$//g')
+
+# 转换
+cjpeg -quality 100 -grayscale "$FILE_NAME.bmp" > "$FILE_NAME.jpg"

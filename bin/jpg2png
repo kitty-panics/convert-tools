@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#
+# jpg to png
+#
+
+# 获取文件名
+FILE_NAME=$(echo -e "$1" | sed 's/.jpg$//g')
+
+# 转换
+mogrify -format png "$FILE_NAME.jpg"

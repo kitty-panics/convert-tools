@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#
+# link to QR (链接转二维码)
+#
+
+# 生成
+qrencode --level=H --type=UTF8 --margin=2 "$1"

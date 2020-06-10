@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#
+# string to base64
+#
+
+echo -e "$1" | base64

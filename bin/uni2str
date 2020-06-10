@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#
+# Unicode Code Point to String
+#
+
+# 获取 Unicode 字符串
+GET_STR="$1"
+
+# 格式化参数
+echo -E "$GET_STR" | sed 's/\\u/\n/g' | sed 's/u/\n/g' | sed '1d' | while read -r LINE
+do
+    GET_CHAR=$(python3 -c "print(chr(int('0x$LINE', 16)))")
+    printf "$GET_CHAR"
+done

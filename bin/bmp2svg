@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#
+# bmp to svg
+#
+
+# 获取文件名
+FILE_NAME=$(echo -e "$1" | sed 's/.bmp$//g')
+
+# 转换
+potrace "$FILE_NAME.bmp" -s -o "$FILE_NAME.svg"

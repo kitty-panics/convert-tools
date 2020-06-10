@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#
+# Character to Unicode Code Point
+#
+
+# 获取字符
+GET_CHAR="$1"
+
+# 转换
+GET_UNI=$(python3 -c "print(hex(ord('$GET_CHAR')))")
+#GET_UNI=$(python3 -c "print(hex(ord('$GET_CHAR'))[2:])")
+
+# 格式化输出
+printf "$GET_UNI" | sed 's/0x/\\u/g'
