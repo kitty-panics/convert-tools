@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #
-# Character to Unicode Code Point
+# Character to unicode code point
 #
 
 # 获取字符
@@ -12,4 +12,4 @@ GET_UNI=$(python3 -c "print(hex(ord('$GET_CHAR')))")
 #GET_UNI=$(python3 -c "print(hex(ord('$GET_CHAR'))[2:])")
 
 # 格式化输出
-printf "$GET_UNI" | sed 's/0x/\\u/g'
+echo -E "$GET_UNI" | sed 's/0x/\\u/g'

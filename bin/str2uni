@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #
-# String to Unicode Code Point
+# String to unicode code point
 #
 
 # 获取字符串参数
