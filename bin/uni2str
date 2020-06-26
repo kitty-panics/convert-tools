@@ -14,5 +14,5 @@ echo -E "$GET_STR" | sed 's/\\u/\n/g' | sed 's/u/\n/g' | sed '1d' |
 while read -r LINE
 do
     GET_CHAR=$(python3 -c "print(chr(int('0x$LINE', 16)))")
-    echo -e "$GET_CHAR"
+    echo -e "$GET_CHAR" | tr -d '\n'
 done

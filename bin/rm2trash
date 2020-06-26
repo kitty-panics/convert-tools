@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+#
+# Safe delete
+#
+
+mkdir -p "$HOME/.cache/trash"
+case "$1" in
+"-rf")
+    mv -f "$2" "$HOME/.cache/trash"
+    ;;
+"-fr")
+    mv -f "$2" "$HOME/.cache/trash"
+    ;;
+"-r")
+    mv -f "$2" "$HOME/.cache/trash"
+    ;;
+"-f")
+    mv -f "$2" "$HOME/.cache/trash"
+    ;;
+"-d")
+    rm -rf "$HOME/.cache/trash"
+    ;;
+*)
+    mv -f "$@" "$HOME/.cache/trash"
+    ;;
+esac

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+#
+# svg to png
+#
+
+# 获取文件名
+FILE_NAME=$(echo -e "$1" | sed 's/.svg$//g')
+
+# 转换
+convert "$FILE_NAME.svg" "$FILE_NAME.png"
