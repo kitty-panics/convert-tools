@@ -3,6 +3,9 @@
 #
 # svg to png
 #
+# 注：
+# 需要系统已装 imagemagick 包
+#
 
 # 获取文件名
 FILE_NAME=$(echo -e "$1" | sed 's/.svg$//g')

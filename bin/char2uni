@@ -3,6 +3,9 @@
 #
 # Character to unicode code point
 #
+# 注：
+# 需要系统已装 python3 包
+#
 
 # 获取字符
 GET_CHAR="$1"

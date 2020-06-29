@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+#
+# URL Encode
+#
+# 注：
+# 需要系统已装 python3 包
+#
+
+# 获取需 Encode 的文本 (参数1)
+echo -e "$1" |
+
+# 编码
+python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.stdin.read()))" |
+
+# 格式化数据
+sed "s/%0A//g"

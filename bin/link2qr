@@ -3,6 +3,9 @@
 #
 # link to QR (链接转二维码)
 #
+# 注：
+# 需要系统已装 qrencode 包
+#
 
 # 生成
 qrencode --level=H --type=UTF8 --margin=2 "$1"

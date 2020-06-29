@@ -3,21 +3,19 @@
 #
 # 简体转繁体
 #
+# 注：
+# 需要系统已装 opencc 包
+#
 
-# 获取当前路径
-GET_PATH=$(pwd)
-
-# 进入临时目录
-cd $(mktemp -d)
-# 获取临时目录路径
-GET_TEMP_PATH=$(pwd)
+# 获取要转换的文件
+GET_FILE="$1"
 
 # 判断是否为文件
-if [[ -f "$1" ]]; then
-    opencc -i "$GET_PATH/$1" -o "$GET_TEMP_PATH/$1.new" -c /usr/share/opencc/s2tw.json
-    cp -rf "$GET_TEMP_PATH/$1.new" "$GET_PATH/$1"
+if [[ -f "$GET_FILE" ]]; then
+    opencc -i "$GET_FILE" -o "$GET_FILE.new" -c /usr/share/opencc/s2tw.json
+    cp -rf "$GET_FILE.new" "$GET_FILE" && rm -rf "$GET_FILE.new"
 else
-    echo -e "$1" > "$GET_TEMP_PATH/s2tw.txt"
-    opencc -i "$GET_TEMP_PATH/s2tw.txt" -o "$GET_TEMP_PATH/s2tw.new" -c /usr/share/opencc/s2tw.json
-    cat "$GET_TEMP_PATH/s2tw.new"
+    echo -e "$GET_FILE" > "$GET_FILE.tmp"
+    opencc -i "$GET_FILE.tmp" -o "$GET_FILE.new" -c /usr/share/opencc/s2tw.json && rm -rf "$GET_FILE.tmp"
+    cat "$GET_FILE.new" && rm -rf "$GET_FILE.new"
 fi

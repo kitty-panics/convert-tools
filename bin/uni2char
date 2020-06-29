@@ -3,6 +3,9 @@
 #
 # Unicode code point to character
 #
+# 注：
+# 需要系统已装 python3 包
+#
 
 # 获取 Unicode 字符串 (参数1)，并格式化参数
 GET_CHAR=$(echo -E "$1" | sed 's/^\\u/0x/g' | sed 's/^u/0x/g')

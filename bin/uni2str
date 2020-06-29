@@ -3,6 +3,9 @@
 #
 # Unicode code point to string
 #
+# 注：
+# 需要系统已装 python3 包
+#
 
 # 获取 Unicode 字符串 (参数1)
 GET_STR="$1"

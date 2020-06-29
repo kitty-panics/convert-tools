@@ -3,6 +3,9 @@
 #
 # jpg to svg
 #
+# 注：
+# 需要系统已装 imagemagick, potrace 包
+#
 
 # 获取当前路径
 GET_PATH=$(pwd)

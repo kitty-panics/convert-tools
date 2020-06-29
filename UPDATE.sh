@@ -9,6 +9,7 @@ cp -rf "$(which bmp2grayjpg)" ./bin/ && chmod +x ./bin/bmp2grayjpg
 cp -rf "$(which bmp2jpg)" ./bin/ && chmod +x ./bin/bmp2jpg
 cp -rf "$(which bmp2svg)" ./bin/ && chmod +x ./bin/bmp2svg
 cp -rf "$(which char2uni)" ./bin/ && chmod +x ./bin/char2uni
+cp -rf "$(which d2u)" ./bin/ && chmod +x ./bin/d2u
 cp -rf "$(which jpg2bmp)" ./bin/ && chmod +x ./bin/jpg2bmp
 cp -rf "$(which jpg2grayjpg)" ./bin/ && chmod +x ./bin/jpg2grayjpg
 cp -rf "$(which jpg2png)" ./bin/ && chmod +x ./bin/jpg2png
@@ -25,3 +26,5 @@ cp -rf "$(which ts2mp4)" ./bin/ && chmod +x ./bin/ts2mp4
 cp -rf "$(which tw2s)" ./bin/ && chmod +x ./bin/tw2s
 cp -rf "$(which uni2char)" ./bin/ && chmod +x ./bin/uni2char
 cp -rf "$(which uni2str)" ./bin/ && chmod +x ./bin/uni2str
+cp -rf "$(which url-decode)" ./bin/ && chmod +x ./bin/url-decode
+cp -rf "$(which url-encode)" ./bin/ && chmod +x ./bin/url-encode
