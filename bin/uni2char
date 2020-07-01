@@ -8,7 +8,7 @@
 #
 
 # 获取 Unicode 字符串 (参数1)，并格式化参数
-GET_CHAR=$(echo -E "$1" | sed 's/^\\u/0x/g' | sed 's/^u/0x/g')
+GET_CHAR=$(echo -E "$1" | sed 's/^\\[uU]/0x/g' | sed 's/^[uU]/0x/g')
 
 # 转换
 python3 -c "print(chr(int('$GET_CHAR', 16)))"

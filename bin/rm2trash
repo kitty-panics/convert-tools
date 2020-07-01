@@ -4,7 +4,10 @@
 # Safe delete
 #
 
+# 创建回收站
 mkdir -p "$HOME/.cache/trash"
+
+# 参数判断
 case "$1" in
 "-rf")
     mv -f "$2" "$HOME/.cache/trash"

@@ -4,4 +4,5 @@
 # base64 to string
 #
 
+# 解码
 echo -e "$1" | base64 -d

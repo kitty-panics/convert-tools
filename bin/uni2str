@@ -11,7 +11,7 @@
 GET_STR="$1"
 
 # 格式化参数
-echo -E "$GET_STR" | sed 's/\\u/\n/g' | sed 's/u/\n/g' | sed '1d' |
+echo -E "$GET_STR" | sed 's/\\[uU]/\n/g' | sed 's/[uU]/\n/g' | sed '1d' |
 
 # 转换
 while read -r LINE
