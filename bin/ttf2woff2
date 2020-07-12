@@ -1,0 +1,15 @@
+# 描述性文件
+
+#
+# ttf2woff2
+#
+# 注：
+# 可使用我编译好的二进制包 (提供 Windows、Linux 版本)。
+# https://github.com/aj-ash/woff2/releases
+#
+
+# 使用下面的命令安装转换工具
+# pacman -S woff2
+
+# 此转换工具的项目主页：
+# https://github.com/google/woff2

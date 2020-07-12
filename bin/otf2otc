@@ -1,6 +1,11 @@
-# This is a description file
+# 描述性文件
 
 #
 # otf2otc
-# Link: https://raw.githubusercontent.com/adobe-type-tools/afdko/develop/python/afdko/otf2otc.py
 #
+# 注：
+# 需要系统已装 python3 包
+#
+
+# 从下面的链接下载脚本
+# https://raw.githubusercontent.com/adobe-type-tools/afdko/develop/python/afdko/otf2otc.py

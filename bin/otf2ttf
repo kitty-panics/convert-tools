@@ -1,6 +1,11 @@
-# This is a description file
+# 描述性文件
 
 #
 # otf2ttf
-# Link: https://raw.githubusercontent.com/fonttools/fonttools/master/Snippets/otf2ttf.py
 #
+# 注：
+# 需要系统已装 python3 包
+#
+
+# 从下面的链接下载脚本
+# https://raw.githubusercontent.com/fonttools/fonttools/master/Snippets/otf2ttf.py

@@ -1,6 +1,11 @@
-# This is a description file
+# 描述性文件
 
 #
 # svg2glif
-# Link: https://raw.githubusercontent.com/fonttools/fonttools/master/Snippets/svg2glif.py
 #
+# 注：
+# 需要系统已装 python3 包
+#
+
+# 从下面的链接下载脚本
+# https://raw.githubusercontent.com/fonttools/fonttools/master/Snippets/svg2glif.py

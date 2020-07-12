@@ -1,0 +1,14 @@
+# 描述性文件
+
+#
+# ttf2woff
+#
+# 注：
+# 需要系统已装 Node.js 包
+#
+
+# 使用下面的命令安装转换工具
+# npm install -g ttf2woff
+
+# 此转换工具的项目主页：
+# https://github.com/fontello/ttf2woff
