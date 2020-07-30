@@ -15,6 +15,7 @@ cp -rf "$(which jpg2grayjpg)" ./bin/ && chmod +x ./bin/jpg2grayjpg
 cp -rf "$(which jpg2png)" ./bin/ && chmod +x ./bin/jpg2png
 cp -rf "$(which jpg2svg)" ./bin/ && chmod +x ./bin/jpg2svg
 cp -rf "$(which link2qr)" ./bin/ && chmod +x ./bin/link2qr
+cp -rf "$(which mp42gif)" ./bin/ && chmod +x ./bin/mp42gif
 cp -rf "$(which png2ico)" ./bin/ && chmod +x ./bin/png2ico
 cp -rf "$(which png2jpg)" ./bin/ && chmod +x ./bin/png2jpg
 cp -rf "$(which png2svg)" ./bin/ && chmod +x ./bin/png2svg
