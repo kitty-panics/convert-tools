@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# URL Encode
+# URL encode
 #
 # 注：
 # 需要系统已装 python3 包
@@ -14,4 +14,4 @@ echo -e "$1" |
 python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.stdin.read()))" |
 
 # 格式化数据
-sed "s/%0A//g"
+sed 's/%0A//g'

@@ -24,6 +24,7 @@ case "$1" in
 "-f")
     mv -f "$2" "$HOME/.cache/trash"
     ;;
+# 清空回收站
 "-d")
     rm -rf "$HOME/.cache/trash"
     ;;

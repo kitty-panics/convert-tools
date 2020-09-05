@@ -15,5 +15,5 @@ for i in $(seq 1 ${#GET_STR})
 do
     GET_CHAR=${GET_STR:i-1:1}
     GET_UNI=$(python3 -c "print(hex(ord('$GET_CHAR')))")
-    printf "$GET_UNI" | sed 's/0x/\\u/g'
+    echo -ne "$GET_UNI" | sed 's/0x/\\u/g'
 done
