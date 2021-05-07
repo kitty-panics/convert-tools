@@ -1,17 +1,18 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
 
 #
-# URL encode
+# URL Encode
 #
 # 注：
 # 需要系统已装 python3 包
 #
 
-# 获取需 Encode 的文本 (参数1)
-echo -e "$1" |
+# 导模块
+import sys
+import urllib.parse
+
+# 定义变量
+GET_INPUT = sys.argv[1]
 
 # 编码
-python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.stdin.read()))" |
-
-# 格式化数据
-sed 's/%0A//g'
+print(urllib.parse.quote(GET_INPUT))

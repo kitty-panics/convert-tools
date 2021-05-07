@@ -1,17 +1,18 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
 
 #
-# URL decode
+# URL Decode
 #
 # 注：
 # 需要系统已装 python3 包
 #
 
-# 获取需 Decode 的文本 (参数1)
-echo -e "$1" |
+# 导模块
+import sys
+import urllib.parse
 
-# 编码
-python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.stdin.read()))" |
+# 定义变量
+GET_INPUT = sys.argv[1]
 
-# 格式化数据
-sed '$d'
+# 解码
+print(urllib.parse.unquote(GET_INPUT))
