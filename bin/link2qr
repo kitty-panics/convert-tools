@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# Link to QR (链接转二维码)
+# link to QR (链接转二维码)
 #
 # 注：
 # 需要系统已装 qrencode 包

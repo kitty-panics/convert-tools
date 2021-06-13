@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
 
 #
 # Unicode code point to string
@@ -7,14 +7,37 @@
 # 需要系统已装 python3 包
 #
 
-# 获取 Unicode 字符串 (参数1)
-GET_STR="$1"
+# 导模块
+import sys
+
+# 定义变量
+GET_INPUT = sys.argv[1]
+
+def str_Convert(split_char):
+    STR_LIST = GET_INPUT.split(split_char)
+    for GET_LIST in STR_LIST:
+        if GET_LIST != '':
+            print(chr(int('0x' + GET_LIST, 16)), end='')
 
 # 格式化参数
-echo -E "$GET_STR" | sed 's/\\[uU]/\n/g' | sed 's/[uU]/\n/g' | sed '1d' |
+if GET_INPUT.startswith('0x') == True:
+    str_Convert('0x')
 
-# 转换
-while read -r LINE
-do
-    python3 -c "print(chr(int('0x$LINE', 16)))"
-done
+elif GET_INPUT.startswith('u+') == True:
+    str_Convert('u+')
+
+elif GET_INPUT.startswith('U+') == True:
+    str_Convert('U+')
+
+elif GET_INPUT.startswith('u') == True:
+    str_Convert('u')
+
+elif GET_INPUT.startswith('U') == True:
+    str_Convert('U')
+
+elif GET_INPUT.startswith('\\u') == True:
+    str_Convert('\\u')
+
+elif GET_INPUT.startswith('\\U') == True:
+    str_Convert('\\U')
+

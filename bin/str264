@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# String to base64
-#
-# 注：
-# 需要系统已装 coreutils 包
+# string to base64
 #
 
 # 编码
