@@ -52,6 +52,8 @@
     + 字符串转换至二维码
 + str2uni
     + 字符串转换至 Unicode 码
++ svg2glif
+    + SVG 转换至 UFO 字形
 + svg2png
     + svg 图片转换至 png 图片
 + tc2sc
