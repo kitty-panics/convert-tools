@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+#
+# string to base64
+#
+# 注：
+# 需要系统已装 coreutils 包
+#
+
+# 编码
+echo -n "$1" | base64

@@ -3,27 +3,16 @@
 #
 # Safe delete
 #
+# 需将 rm 命令 alias 到 rm2trash
+#
 
 # 创建回收站
-mkdir -p "$HOME/.cache/trash"
+if [[ ! -d "$HOME/.cache/trash" ]]; then
+    mkdir -p "$HOME/.cache/trash"
+fi
 
 # 参数判断
 case "$1" in
-"-rf")
-    mv -f "$2" "$HOME/.cache/trash"
-    ;;
-"-fr")
-    mv -f "$2" "$HOME/.cache/trash"
-    ;;
-"-r")
-    mv -f "$2" "$HOME/.cache/trash"
-    ;;
-"-f")
-    mv -f "$2" "$HOME/.cache/trash"
-    ;;
-"-d")
-    rm -rf "$HOME/.cache/trash"
-    ;;
 *)
     mv -f "$@" "$HOME/.cache/trash"
     ;;

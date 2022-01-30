@@ -10,8 +10,8 @@
 find . -type f | while read -r LINE
 do
     # Encoding to UTF-8
-    FILE_MINE=$(file -bi "$LINE" | cut -d "=" -f 2)
-    iconv --from-code="$FILE_MINE" --to-code="UTF-8" --output="$LINE" "$LINE"
+    FILE_MIME=$(file -bi "$LINE" | cut -d'=' -f2)
+    iconv --from-code="$FILE_MIME" --to-code="UTF-8" --output="$LINE" "$LINE"
 
     # DOS to UNIX and remove BOM
     dos2unix --oldfile --quiet --remove-bom --safe "$LINE"

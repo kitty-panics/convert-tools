@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#
+# mp4 to mp3
+#
+# 注：
+# 需要系统已装 ffmpeg 包
+#
+
+# 获取文件名
+FILE_NAME=$(echo -e "$1" | sed 's/.mp4$//g')
+
+# 转换
+ffmpeg -i "$FILE_NAME".mp4 -vn -c:a mp3 -ar 48000 -ac 2 "$FILE_NAME".mp3

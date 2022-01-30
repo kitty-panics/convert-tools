@@ -7,19 +7,13 @@
 # 需要系统已装 imagemagick, potrace 包
 #
 
-# 获取当前路径
-GET_PATH=$(pwd)
-
-# 进入临时目录
-cd $(mktemp -d)
-# 获取临时目录路径
-GET_TEMP_PATH=$(pwd)
-
 # 获取文件名
-GET_FILE_NAME=$(echo -e "$1" | sed 's/.jpg$//g')
+FILE_NAME=$(echo -e "$1" | sed 's/.jpg$//g')
 
-# 转换到过渡的文件格式 (PNM)
-convert "$GET_PATH/$GET_FILE_NAME.jpg" "$GET_FILE_NAME.pnm"
-
+# 转换到过渡文件 (PNM 格式)
+convert "$FILE_NAME.jpg" "$FILE_NAME.pnm"
 # 转换到 SVG 格式
-potrace "$GET_FILE_NAME.pnm" -s -o "$GET_PATH/$GET_FILE_NAME.svg"
+potrace "$FILE_NAME.pnm" -s -o "$FILE_NAME.svg"
+
+# 删除过渡文件
+rm -rf "$FILE_NAME.pnm"

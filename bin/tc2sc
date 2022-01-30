@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+#
+# 中国台湾繁体转中国大陆简体
+#
+# 注：
+# 需要系统已装 opencc 包
+#
+
+# 获取要转换的文件
+GET_FILE="$1"
+
+# 文件直接使用 opencc 转换
+if [[ -f "$GET_FILE" ]]; then
+    # 转换输出到新文件
+    opencc -i "$GET_FILE" -o "$GET_FILE.new" -c /usr/share/opencc/tw2s.json
+    # 用新文件覆盖旧文件
+    cp -rf "$GET_FILE.new" "$GET_FILE"
+    # 删除新文件
+    rm -rf "$GET_FILE.new"
+
+# 非文件存为临时文件再用 opencc 转换
+else
+    # 存为临时文件
+    echo -e "$GET_FILE" > "$GET_FILE.tmp"
+    # 转换输出到文件
+    opencc -i "$GET_FILE.tmp" -o "$GET_FILE" -c /usr/share/opencc/tw2s.json
+    # 删除临时文件
+    rm -rf "$GET_FILE.tmp"
+
+    # 输出并删除文件
+    cat "$GET_FILE"
+    rm -rf "$GET_FILE"
+fi

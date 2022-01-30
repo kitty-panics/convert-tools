@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-#
-# string to base64
-#
-
-# 编码
-echo -e "$1" | base64

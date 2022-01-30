@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+#
+# gif to mp4
+#
+# 注：
+# 需要系统已装 ffmpeg 包
+#
+
+# 获取文件名
+FILE_NAME=$(echo -e "$1" | sed 's/.mp4$//g')
+
+# 转换
+# 添加一段空白音频，否则某些软件或网站可能会出问题
+# 用了 anullsrc 代表空的音频输入，同时加了一个 -shortest 代表多个输入取时间最短的那个
+ffmpeg -f lavfi -i anullsrc -i "$FILE_NAME".gif -c:v libx264 -c:a aac -shortest "$FILE_NAME".mp4

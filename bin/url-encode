@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 
 #
 # URL Encode
@@ -7,7 +8,7 @@
 # 需要系统已装 python3 包
 #
 
-# 导模块
+# 导入模块
 import sys
 import urllib.parse
 

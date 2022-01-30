@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 
 #
 # Unicode code point to string
@@ -13,31 +14,31 @@ import sys
 # 定义变量
 GET_INPUT = sys.argv[1]
 
-def str_Convert(split_char):
-    STR_LIST = GET_INPUT.split(split_char)
+def String_Convert(SPLIT_CHAR):
+    STR_LIST = GET_INPUT.split(SPLIT_CHAR)
     for GET_LIST in STR_LIST:
         if GET_LIST != '':
             print(chr(int('0x' + GET_LIST, 16)), end='')
 
 # 格式化参数
 if GET_INPUT.startswith('0x') == True:
-    str_Convert('0x')
+    String_Convert('0x')
 
 elif GET_INPUT.startswith('u+') == True:
-    str_Convert('u+')
+    String_Convert('u+')
 
 elif GET_INPUT.startswith('U+') == True:
-    str_Convert('U+')
+    String_Convert('U+')
 
 elif GET_INPUT.startswith('u') == True:
-    str_Convert('u')
+    String_Convert('u')
 
 elif GET_INPUT.startswith('U') == True:
-    str_Convert('U')
+    String_Convert('U')
 
 elif GET_INPUT.startswith('\\u') == True:
-    str_Convert('\\u')
+    String_Convert('\\u')
 
 elif GET_INPUT.startswith('\\U') == True:
-    str_Convert('\\U')
+    String_Convert('\\U')
 

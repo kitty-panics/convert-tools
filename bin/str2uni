@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
 
 #
 # String to unicode code point
@@ -7,13 +8,12 @@
 # 需要系统已装 python3 包
 #
 
-# 获取字符串参数
-GET_STR="$1"
+# 导模块
+import sys
+
+# 定义变量
+GET_INPUT = sys.argv[1]
 
 # 依次取得每个字符
-for i in $(seq 1 ${#GET_STR})
-do
-    GET_CHAR=${GET_STR:i-1:1}
-    GET_UNI=$(python3 -c "print(hex(ord('$GET_CHAR')))")
-    printf "$GET_UNI" | sed 's/0x/\\u/g'
-done
+for CHAR in GET_INPUT:
+    print('\\u' + hex(ord(CHAR))[2:], end = '')
