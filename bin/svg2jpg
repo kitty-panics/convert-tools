@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#
+# svg to jpg
+#
+# 注：
+# 需要系统已装 imagemagick 包
+#
+
+# 获取文件名
+FILE_NAME=$(echo -e "$1" | sed 's/.svg$//g')
+
+# 转换
+convert "$FILE_NAME.svg" "$FILE_NAME.jpg"

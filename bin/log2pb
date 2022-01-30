@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+#
+# Upload log to paste-bin
+#
+# 注：
+# 需要系统已装 curl 包
+#
+
+# 获取要转换的文件
+GET_FILE="$1"
+
+# 文件直接上传
+if [[ -f "$GET_FILE" ]]; then
+    # 上传
+        # fars.ee
+    curl -F "c=@-" "https://fars.ee/?u=1" "$GET_FILE"
+
+# 非文件存为临时文件再上传
+else
+    # 存为临时文件
+    echo -e "$GET_FILE" > "pb.tmp"
+
+    # 上传
+        # fars.ee
+    curl -F "c=@-" "https://fars.ee/?u=1" "pb.tmp"
+
+    # 删除临时文件
+    rm -rf "pb.tmp"
+fi

@@ -26,6 +26,8 @@
     + jpg 图片转换至 png 图片
 + jpg2svg
     + jpg 图片转换至 svg 图片
++ log2pb
+    + 将日志上传至 Paste-Bin
 + mp42gif
     + mp4 视频转换至 gif 动图
 + mp42mp3
@@ -36,6 +38,8 @@
     + otf 字体转换至 otc 字体
 + otf2ttf
     + otf 字体转换至 ttf 字体
++ png2grayjpg
+    + png 图片转换至灰度 jpg 图片
 + png2ico
     + png 图片转换至 ico 图片
 + png2jpg
@@ -54,6 +58,10 @@
     + 字符串转换至 Unicode 码
 + svg2glif
     + SVG 转换至 UFO 字形
++ svg2grayjpg
+    + svg 图片转换至灰度 jpg 图片
++ svg2jpg
+    + svg 图片转换至 jpg 图片
 + svg2png
     + svg 图片转换至 png 图片
 + tc2sc
