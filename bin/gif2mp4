@@ -8,7 +8,7 @@
 #
 
 # 获取文件名
-FILE_NAME=$(echo -e "$1" | sed 's/.mp4$//g')
+FILE_NAME=$(echo -e "$1" | sed 's/.gif$//g')
 
 # 转换
 # 添加一段空白音频，否则某些软件或网站可能会出问题

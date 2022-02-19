@@ -11,5 +11,7 @@
 FILE_NAME=$(echo -e "$1" | sed 's/.mp4$//g')
 
 # 转换
-#ffmpeg -i "$FILE_NAME".mp4 -vf "fps=10,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop -1 "$FILE_NAME".gif
-ffmpeg -i "$FILE_NAME".mp4 -an -c:v gif "$FILE_NAME".gif
+#ffmpeg -i "$FILE_NAME".mp4 -s 480x360 -r 15  "$FILE_NAME"-360p.gif
+ffmpeg -i "$FILE_NAME".mp4 -s 640x480 -r 15  "$FILE_NAME"-480p.gif
+#ffmpeg -i "$FILE_NAME".mp4 -s 1280x720 -r 15 "$FILE_NAME"-720p.gif
+#ffmpeg -i "$FILE_NAME".mp4                   "$FILE_NAME"-Vanilla.gif
