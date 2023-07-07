@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+#
+# Permissions Numbers2Letters
+#
+
+import sys
+
+input = sys.argv[1]
+permissions = {'r': 4, 'w': 2, 'x': 1, '-': 0}
+for i in range(0, len(input), 3):
+    triplet = input[i:i+3]
+    sum = 0
+    for j in triplet:
+        sum = sum + permissions[j]
+    print(sum, end="")

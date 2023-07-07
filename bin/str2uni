@@ -17,3 +17,4 @@ GET_INPUT = sys.argv[1]
 # 依次取得每个字符
 for CHAR in GET_INPUT:
     print('\\u' + hex(ord(CHAR))[2:], end = '')
+    #print('U+' + hex(ord(CHAR))[2:].upper(), end = '')

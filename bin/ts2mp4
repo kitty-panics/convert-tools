@@ -7,17 +7,13 @@
 # 需要系统已装 ffmpeg 包
 #
 
-# 视频输出名 (为当前所在的目录名)
-OUTPUT_NAME=${PWD##*/}
-
-# 遍历 .ts 文件 (a-z 顺序)
-ls -A | grep -E '.ts$' | sort -n | while read -r LINE
-do
-    echo -e "file '$LINE'" >> "ts.list"
-done
+# 获取文件名
+FILE_NAME=$(echo -e "$1" | sed 's/.ts$//g')
 
 # 转换
-ffmpeg -f concat -safe 0 -i "ts.list" -c copy "$OUTPUT_NAME.mp4"
+ffmpeg -i "$FILE_NAME".ts -c copy -bsf:a aac_adtstoasc "$FILE_NAME".mp4
 
-# 删除 ts.list
-rm -rf "ts.list"
+# 参数说明
+#
+# -c copy              : 不对音视频进行格式转换，直接拷贝
+# -bsf:a aac_adtstoasc ：将 ts 中的 aac 格式转为 mp4 可接受的格式

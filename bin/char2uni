@@ -16,3 +16,4 @@ GET_INPUT = sys.argv[1]
 
 # 转换
 print('\\u' + hex(ord(GET_INPUT))[2:])
+#print('U+' + hex(ord(GET_INPUT))[2:].upper())

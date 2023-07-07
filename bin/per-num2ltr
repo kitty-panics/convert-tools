@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+#
+# Permissions Letters2Numbers
+#
+
+import sys
+
+permissions = {"0": "-", "1": "x",  "2": "w",  "3": "wx",
+               "4": "r", "5": "rx", "6": "rw", "7": "rwx"}
+for i in sys.argv[1]:
+    to_ltr = permissions[i]
+    if len(to_ltr) < 3:
+        to_ltr += "-" * (3 - len(to_ltr))
+        print(to_ltr, end="")

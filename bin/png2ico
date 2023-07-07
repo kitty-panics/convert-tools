@@ -1,14 +1,30 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 #
 # png to ico
 #
 # 注：
-# 需要系统已装 imagemagick 包
+# 需要系统已装 python-pillow 包
 #
 
-# 获取文件名
-FILE_NAME=$(echo -e "$1" | sed 's/.png$//g')
+import sys, re
+from PIL import Image
 
-# 转换
-convert -gravity center -background transparent "$1" -define icon:auto-resize=256 "$FILE_NAME".ico
+def Convert_Resize(png_file, png_size):
+    image = Image.open(png_file + '.png')
+    image.save(png_file + '.ico', sizes=[(png_size, png_size)])
+
+
+def main(argv = None):
+    if argv is None:
+        argv = sys.argv
+    else:
+        argv = [sys.argv[0]] + argv
+    png_file = re.sub(r'.png$', '', argv[1])
+    png_size = int(re.sub(r'^-', '', argv[2]))
+    Convert_Resize(png_file, png_size)
+
+
+if __name__ == '__main__':
+    main()
