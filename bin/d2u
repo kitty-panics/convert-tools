@@ -7,12 +7,12 @@
 # 需要系统已装 glibc, dos2unix 包
 #
 
-find . -type f | while read -r LINE
+find . -type f | while read -r i
 do
     # Encoding to UTF-8
-    FILE_MIME=$(file -bi "$LINE" | cut -d'=' -f2)
-    iconv --from-code="$FILE_MIME" --to-code="UTF-8" --output="$LINE" "$LINE"
+    FILE_MIME=$(file -bi "$i" | cut -d'=' -f2)
+    iconv --from-code="$FILE_MIME" --to-code="UTF-8" --output="$i" "$i"
 
     # DOS to UNIX and remove BOM
-    dos2unix --oldfile --quiet --remove-bom --safe "$LINE"
+    dos2unix --oldfile --quiet --remove-bom --safe "$i"
 done

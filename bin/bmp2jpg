@@ -11,4 +11,4 @@
 FILE_NAME=$(echo -e "$1" | sed 's/.bmp$//g')
 
 # 转换
-cjpeg -quality 100 "$FILE_NAME.bmp" > "$FILE_NAME.jpg"
+cjpeg -quality 100 "$FILE_NAME".bmp > "$FILE_NAME".jpg

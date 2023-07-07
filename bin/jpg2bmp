@@ -11,4 +11,4 @@
 FILE_NAME=$(echo -e "$1" | sed 's/.jpg$//g')
 
 # 转换
-djpeg -bmp "$FILE_NAME.jpg" > "$FILE_NAME.bmp"
+djpeg -bmp "$FILE_NAME".jpg > "$FILE_NAME".bmp

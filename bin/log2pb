@@ -14,17 +14,18 @@ GET_FILE="$1"
 if [[ -f "$GET_FILE" ]]; then
     # 上传
         # fars.ee
-    curl -F "c=@-" "https://fars.ee/?u=1" "$GET_FILE"
+    curl -F "c=@-" "https://fars.ee/?u=1" < "$GET_FILE"
 
 # 非文件存为临时文件再上传
 else
     # 存为临时文件
-    echo -e "$GET_FILE" > "pb.tmp"
+    TMP_DIR="$(mktemp -d)"
+    echo -e "$GET_FILE" > "$TMP_DIR"/pb.tmp
 
     # 上传
         # fars.ee
-    curl -F "c=@-" "https://fars.ee/?u=1" "pb.tmp"
+    curl -F "c=@-" "https://fars.ee/?u=1" < "$TMP_DIR"/pb.tmp
 
     # 删除临时文件
-    rm -rf "pb.tmp"
+    rm -rf "$TMP_DIR"
 fi

@@ -11,9 +11,10 @@
 # 导模块
 import sys
 
-# 定义变量
-GET_INPUT = sys.argv[1]
+# 转换 (接受参数 1)
+to_uni = hex(ord(sys.argv[1]))[2:]
 
-# 转换
-print('\\u' + hex(ord(GET_INPUT))[2:])
-#print('U+' + hex(ord(GET_INPUT))[2:].upper())
+# 输出
+print('\\u' + to_uni, end=" , ")
+print('u+' + to_uni, end=" , ")
+print('U+' + to_uni.upper())

@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
 #
-# Permissions Letters2Numbers
+# Linux permissions letters to numbers
+#
+# 注：
+# 需要系统已装 python3 包
 #
 
 import sys

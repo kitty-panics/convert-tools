@@ -11,9 +11,9 @@
 FILE_NAME=$(echo -e "$1" | sed 's/.jpg$//g')
 
 # 转换到过渡文件 (PNM 格式)
-convert "$FILE_NAME.jpg" "$FILE_NAME.pnm"
+convert "$FILE_NAME".jpg "$FILE_NAME".pnm
 # 转换到 SVG 格式
-potrace "$FILE_NAME.pnm" -s -o "$FILE_NAME.svg"
+potrace "$FILE_NAME".pnm -s -o "$FILE_NAME".svg
 
 # 删除过渡文件
-rm -rf "$FILE_NAME.pnm"
+rm -rf "$FILE_NAME".pnm

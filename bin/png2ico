@@ -5,7 +5,7 @@
 # png to ico
 #
 # 注：
-# 需要系统已装 python-pillow 包
+# 需要系统已装 python3, python-pillow 包
 #
 
 import sys, re
